@@ -8,7 +8,7 @@ class Admin extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:8080/api/getAdmins")
+      .get("http://localhost:8080/getAdmins")
       .then((response) => {
         console.log(response);
         this.setState({ admins: response.data });
@@ -19,13 +19,13 @@ class Admin extends React.Component {
     return (
       <div className="container">
         
-        <table className="table table-primary mx-auto mt-3">
+        <table className="table table-primary mx-auto mt-5">
           <thead>
             <tr>
               <th>AdminId</th>
               <th>ContactNumber</th>
-              <th>Email</th>
-              <th>password</th>
+              <th>EmailId</th>
+               {/* <th>password</th>  */}
             </tr>
           </thead>
           <tbody>
@@ -34,8 +34,12 @@ class Admin extends React.Component {
                 <td>{admin.adminId}</td>
                 <td>{admin.contactNumber}</td>
                 <td>{admin.emailId}</td>
-                <td>{admin.password}</td>
-                
+                 {/* <td>{admin.password}</td>  */}
+                {/* <input
+                type="button"
+                value="Update"
+                className="btn btn-secondary me-2"
+                /> */}
               </tr>
             ))}
           </tbody>
